@@ -11,10 +11,18 @@ export class AppGroceryComponent implements OnInit {
   task: string;
   tasks = [];
 
+  
+
   onClick(){
     this.tasks.push({name: this.task});
-  this.task = '';
+    this.task = "";
 }  
+
+deleteOnClick(taskToDelete){
+  var index = this.tasks.indexOf(taskToDelete);
+  this.tasks.splice(index, 1);
+}
+
 
   constructor() { }
 
